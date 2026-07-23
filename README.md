@@ -19,9 +19,9 @@ For example, a user can ask:
 The system interprets the user's intent and routes the request to the appropriate specialised agent.
 
 **Supported Agents:**
--General QA Agent =	Handles general travel questions and unclear requests
--Hotel Agent	     =  Searches, lists, and books hotels
--Flight Agent	 =  Searches, lists, and books flights
+- General QA Agent =	Handles general travel questions and unclear requests
+- Hotel Agent	     =  Searches, lists, and books hotels
+- Flight Agent	 =  Searches, lists, and books flights
 
 The system uses MCP servers as the standardised communication layer between the AI agents and external travel services.
 
