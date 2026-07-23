@@ -117,7 +117,7 @@ CUSTOM_CSS = """
 }
 
 #tw-header {
-    background: linear-gradient(135deg, var(#198bc0) 0%, var(#1c9bd7) 100%;
+    background: linear-gradient(135deg, #198bc0 0%, #1c9bd7 100%);
     color: white;
     padding: 24px 20px;
     border-radius: 16px;
@@ -127,13 +127,13 @@ CUSTOM_CSS = """
 
 #tw-header h1 {
     margin: 0;
-    font-size: 2.0;
+    font-size: 2.0px;
 }
 
 #tw-header p {
     margin: 4px 0 0;
     opacity: 0.9;
-    font-size: 1.5;
+    font-size: 1.5px;
 }
 
 #tw-chatbot {
@@ -148,14 +148,14 @@ CUSTOM_CSS = """
 }
 
 #tw-status {
-    min-height: 1.4em;
+    min-height: 1.4px;
     color: var(--tw-sunset);
     font-weight: 600;
     padding-left: 4px;
 }
 
 @media (max-width: 600px) {
-    #tw-header h1 { font-size: 1.4rem; }
+    #tw-header h1 { font-size: 1.4rpx; }
     #tw-header { padding: 16px 12px; }
     .gradio-container { padding: 4px; }
 }
