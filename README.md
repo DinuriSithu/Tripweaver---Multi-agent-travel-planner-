@@ -97,7 +97,8 @@ hotel API and a flight API.
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
+source .venv/bin/activate
+Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -112,7 +113,6 @@ FLIGHT_MCP_URL=http://localhost:8002/mcp
 HOTEL_API_BASE_URL=your_hotel_api_base_url 
 FLIGHT_API_BASE_URL=your_flight_api_base_url
 
-# Must include /chat, not just the host
 BACKEND_URL=http://localhost:8000/chat
 ```
 
