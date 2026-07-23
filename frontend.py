@@ -117,7 +117,7 @@ CUSTOM_CSS = """
 }
 
 #tw-header {
-    background: linear-gradient(135deg, var(--tw-deep) 0%, var(--tw-sky) 100%);
+    background: #167baa;
     color: white;
     padding: 24px 20px;
     border-radius: 16px;
