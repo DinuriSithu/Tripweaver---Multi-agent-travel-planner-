@@ -117,7 +117,7 @@ CUSTOM_CSS = """
 }
 
 #tw-header {
-    background: linear-gradient(135deg, #198bc0 0%, #1c9bd7 100%);
+    background: linear-gradient(135deg, #198bc0 0%, #29a8e3 100%);
     color: white;
     padding: 24px 20px;
     border-radius: 16px;
@@ -128,12 +128,16 @@ CUSTOM_CSS = """
 #tw-header h1 {
     margin: 0;
     font-size: 32px;
+    font-weight: 800;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 #tw-header p {
     margin: 4px 0 0;
-    opacity: 0.9;
+    opacity: 1.1;
     font-size: 16px;
+    font-weight: 600;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 #tw-chatbot {
