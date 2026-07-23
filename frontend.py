@@ -148,14 +148,14 @@ CUSTOM_CSS = """
 }
 
 #tw-status {
-    min-height: 1.4px;
+    min-height: 5.4px;
     color: var(--tw-sunset);
     font-weight: 600;
     padding-left: 4px;
 }
 
 @media (max-width: 600px) {
-    #tw-header h1 { font-size: 1.4rpx; }
+    #tw-header h1 { font-size: 32px; }
     #tw-header { padding: 16px 12px; }
     .gradio-container { padding: 4px; }
 }
