@@ -29,18 +29,18 @@ The system uses MCP servers as the standardised communication layer between the 
 
 ```
 agents/
-  entity.py        Shared LangGraph state schema
-  llm.py           LLM initialisation
-  mcp_client.py    get_hotel_tools() / get_flight_tools()
-  nodes.py         router / hotel_node / flight_node / unknown_node / generate_response
-  graph.py         Wires the nodes into a LangGraph StateGraph
-  prompts.py       System prompts
+  entity.py     -   Shared LangGraph state schema
+  llm.py        -   LLM initialisation
+  mcp_client.py -  get_hotel_tools() / get_flight_tools()
+  nodes.py      -   router / hotel_node / flight_node / unknown_node / generate_response
+  graph.py      -   Wires the nodes into a LangGraph StateGraph
+  prompts.py    -   System prompts
 mcp_servers/
-  hotel_server.py   MCP server: list/search/book hotels
-  flight_server.py  MCP server: list/search/book flights
-main.py            FastAPI backend (/chat, /chat/stream)
-frontend.py         Gradio chat UI
-entity.py            FastAPI request/response models
+  hotel_server.py  - MCP server: list/search/book hotels
+  flight_server.py - MCP server: list/search/book flights
+main.py           - FastAPI backend (/chat, /chat/stream)
+frontend.py       -  Gradio chat UI
+entity.py         -   FastAPI request/response models
 requirements.txt
 ```
 
@@ -108,9 +108,6 @@ OPENAI_API_KEY=your_actual_api_key_here
 
 HOTEL_MCP_URL=http://localhost:8001/mcp
 FLIGHT_MCP_URL=http://localhost:8002/mcp
-
-HOTEL_API_BASE =your_hotel_api_base_url/hotels
-FLIGHT_API_BASE =your_flight_api_base_url/flights
 
 HOTEL_API_BASE_URL=your_hotel_api_base_url 
 FLIGHT_API_BASE_URL=your_flight_api_base_url
