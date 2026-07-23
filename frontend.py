@@ -127,13 +127,13 @@ CUSTOM_CSS = """
 
 #tw-header h1 {
     margin: 0;
-    font-size: 2.0px;
+    font-size: 32px;
 }
 
 #tw-header p {
     margin: 4px 0 0;
     opacity: 0.9;
-    font-size: 1.5px;
+    font-size: 16px;
 }
 
 #tw-chatbot {
