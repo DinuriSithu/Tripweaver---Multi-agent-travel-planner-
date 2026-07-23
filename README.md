@@ -27,22 +27,22 @@ The system uses MCP servers as the standardised communication layer between the 
 
 ## Project layout
 
-
+```
 agents/
-  entity.py      =  Shared LangGraph state schema
-  llm.py         =  LLM initialisation
-  mcp_client.py  =  get_hotel_tools() / get_flight_tools()
-  nodes.py       =  router / hotel_node / flight_node / unknown_node / generate_response
-  graph.py       =  Wires the nodes into a LangGraph StateGraph
-  prompts.py     =  System prompts
+  entity.py        Shared LangGraph state schema
+  llm.py           LLM initialisation
+  mcp_client.py    get_hotel_tools() / get_flight_tools()
+  nodes.py         router / hotel_node / flight_node / unknown_node / generate_response
+  graph.py         Wires the nodes into a LangGraph StateGraph
+  prompts.py       System prompts
 mcp_servers/
-  hotel_server.py  =  MCP server: list/search/book hotels
-  flight_server.py =  MCP server: list/search/book flights
-main.py          =  FastAPI backend (/chat, /chat/stream)
-frontend.py      =  Gradio chat UI
-entity.py        =  FastAPI request/response models
+  hotel_server.py   MCP server: list/search/book hotels
+  flight_server.py  MCP server: list/search/book flights
+main.py            FastAPI backend (/chat, /chat/stream)
+frontend.py         Gradio chat UI
+entity.py            FastAPI request/response models
 requirements.txt
-
+```
 
 # System Architecture
 
@@ -95,15 +95,15 @@ MCP servers provide the connection between the agents and external travel servic
 **Prerequisites**: Python, an OpenAI API key and base URLs for a
 hotel API and a flight API.
 
-bash
+```bash
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
+```
 
+Create a `.env` file in the project root and add the following:
 
-Create a ".env" file in the project root and add the following:
-
-
+```env
 OPENAI_API_KEY=your_actual_api_key_here
 
 HOTEL_MCP_URL=http://localhost:8001/mcp
@@ -117,16 +117,16 @@ FLIGHT_API_BASE_URL=your_flight_api_base_url
 
 # Must include /chat, not just the host
 BACKEND_URL=http://localhost:8000/chat
-`
+```
 
 **Run locally** (4 terminals):
 
-
+```bash
 python mcp_servers/hotel_server.py    # terminal 1
 python mcp_servers/flight_server.py   # terminal 2
 python main.py                        # terminal 3
 python frontend.py                    # terminal 4
-
+```
 
 Open the URL Gradio prints (default `http://localhost:7860`).
 
@@ -140,14 +140,11 @@ added without touching agent code.
   docstring become the schema the LLM sees. `hotel_server.py` exposes
   `list_hotels`, `search_hotels`, `book_hotel`; `flight_server.py` exposes
   `list_flights`, `search_flights`, `book_flight`.
-  
 - Each server calls a real API via `HOTEL_API_BASE_URL` /
   `FLIGHT_API_BASE_URL` — set in `.env`.
-  
 - `agents/mcp_client.py` fetches hotel and flight tools **independently**
   (`get_hotel_tools()`, `get_flight_tools()`), so if one service is down,
   only that agent degrades the other agent keeps working.
-  
 - **To add a new service** (e.g. weather): write
   `mcp_servers/weather_server.py` with its own `@mcp.tool()` functions and
   its own port, add a `get_weather_tools()` function to `mcp_client.py`
@@ -161,33 +158,33 @@ Render needs services to bind `0.0.0.0` and read the port from the
 this before deploying:
 
 **`main.py`** (at the bottom of file):
-
+```python
 if __name__ == "__main__":
     import uvicorn, os
     uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
-
+```
 
 **`mcp_servers/hotel_server.py`**:
-
+```python
 import os
 mcp = FastMCP("Hotel Service", port=int(os.environ.get("PORT", 8001)), host="0.0.0.0")
-
+```
 
 **`mcp_servers/flight_server.py`**:
-
+```python
 import os
 mcp = FastMCP("Flight Service", port=int(os.environ.get("PORT", 8002)), host="0.0.0.0")
-
+```
 
 **`frontend.py`** (`main()`):
-
+```python
 demo.launch(
     server_name="0.0.0.0",
     server_port=int(os.environ.get("PORT", 7860)),
     theme=gr.themes.Soft(primary_hue="blue", secondary_hue="orange"),
     css=CUSTOM_CSS,
 )
-
+```
 
 **Steps:**
 
@@ -196,11 +193,12 @@ demo.launch(
    Services**, all from the same repo, changing only the name and start
    command:
 
-   | Name                   | Start Command |
+   | Name | Start Command |
+   |---|---|
    | `tripweaver-hotel-mcp` | `python mcp_servers/hotel_server.py` |
-   | `tripweaver-flight-mcp`| `python mcp_servers/flight_server.py` |
-   | `tripweaver-backend`   | `python main.py` |
-   | `tripweaver-frontend`  | `python frontend.py` |
+   | `tripweaver-flight-mcp` | `python mcp_servers/flight_server.py` |
+   | `tripweaver-backend` | `python main.py` |
+   | `tripweaver-frontend` | `python frontend.py` |
 
    For all four: **Build Command** = `pip install -r requirements.txt`,
    **Instance Type** = Free.
@@ -223,8 +221,10 @@ demo.launch(
 
 ### Docker Compose (alternative, local/self-hosted)
 
+```bash
 cp .env.example .env   
 docker compose up --build
+```
 
 Starts all four services together on one Docker network.
 
@@ -243,4 +243,5 @@ Starts all four services together on one Docker network.
    question instead of guessing.
 5. If a service is down, you'll get a clear message and the rest of the
    app keeps working.
+
 
