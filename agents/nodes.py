@@ -3,7 +3,7 @@ from typing import Optional, Literal
 from pydantic import BaseModel, Field
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
-from .mcp_client import get_mcp_tools
+from .mcp_client import get_hotel_tools, get_flight_tools
 from .llm import llm
 from .prompts import get_system_prompt_for_unknown_node, get_system_prompt_with_history
 from .entity import GraphState
@@ -102,10 +102,6 @@ class TravelExtraction(BaseModel):
     )
 
 travel_extractor = llm.with_structured_output(TravelExtraction)
-
-
-async def _get_mcp_tool_map(): 
-    return await get_mcp_tools()
 
 
 def normalize_mcp_results(result):
@@ -337,7 +333,7 @@ def _format_flight(flight: dict) -> str:
 
 async def hotel_node(state: GraphState) -> dict:
     try:
-        tools = await get_mcp_tools()
+        tools = await get_hotel_tools()
         list_hotels = tools.get("list_hotels")
         search_hotels = tools.get("search_hotels")
         book_hotel = tools.get("book_hotel")
@@ -510,7 +506,7 @@ async def hotel_node(state: GraphState) -> dict:
 
 async def flight_node(state: GraphState) -> dict:
     try:
-        tools = await get_mcp_tools()
+        tools = await get_flight_tools()
         list_flights = tools.get("list_flights")
         search_flights = tools.get("search_flights")
         book_flight = tools.get("book_flight")
