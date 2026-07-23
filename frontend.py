@@ -212,7 +212,7 @@ def main():
             outputs=[chatbot, history_state, status_display, message],
         )
 
-    demo.launch(
+    demo.queue().launch(
        server_name="0.0.0.0",
        server_port=int(os.environ.get("PORT", 7860)),
        theme=gr.themes.Soft(primary_hue="blue", secondary_hue="orange"),
