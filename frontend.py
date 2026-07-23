@@ -111,7 +111,7 @@ CUSTOM_CSS = """
 }
 
 .gradio-container {
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
@@ -135,7 +135,7 @@ CUSTOM_CSS = """
 #tw-header p {
     margin: 4px 0 0;
     opacity: 1.1;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     text-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
