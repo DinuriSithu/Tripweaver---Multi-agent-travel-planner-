@@ -10,11 +10,11 @@ TripWeaver allows travellers to interact with a travel planning assistant using 
 
 For example, a user can ask:
 
-"Find hotels in Paris."
-"Show me flights from Colombo to Dubai."
-"Book hotel H123."
-"Book flight F456."
-"I need flights from CMB to LHR on 2026-08-01."
+- "Find hotels in Paris."
+- "Show me flights from Colombo to Dubai."
+- "Book hotel H123."
+- "Book flight F456."
+- "I need flights from CMB to LHR on 2026-08-01."
 
 The system interprets the user's intent and routes the request to the appropriate specialised agent.
 
@@ -29,18 +29,18 @@ The system uses MCP servers as the standardised communication layer between the 
 
 
 agents/
-  entity.py        Shared LangGraph state schema
-  llm.py           LLM initialisation
-  mcp_client.py    get_hotel_tools() / get_flight_tools()
-  nodes.py         router / hotel_node / flight_node / unknown_node / generate_response
-  graph.py         Wires the nodes into a LangGraph StateGraph
-  prompts.py       System prompts
+  entity.py      =  Shared LangGraph state schema
+  llm.py         =  LLM initialisation
+  mcp_client.py  =  get_hotel_tools() / get_flight_tools()
+  nodes.py       =  router / hotel_node / flight_node / unknown_node / generate_response
+  graph.py       =  Wires the nodes into a LangGraph StateGraph
+  prompts.py     =  System prompts
 mcp_servers/
-  hotel_server.py   MCP server: list/search/book hotels
-  flight_server.py  MCP server: list/search/book flights
-main.py            FastAPI backend (/chat, /chat/stream)
-frontend.py         Gradio chat UI
-entity.py            FastAPI request/response models
+  hotel_server.py  =  MCP server: list/search/book hotels
+  flight_server.py =  MCP server: list/search/book flights
+main.py          =  FastAPI backend (/chat, /chat/stream)
+frontend.py      =  Gradio chat UI
+entity.py        =  FastAPI request/response models
 requirements.txt
 
 
@@ -95,7 +95,7 @@ MCP servers provide the connection between the agents and external travel servic
 **Prerequisites**: Python, an OpenAI API key and base URLs for a
 hotel API and a flight API.
 
-
+bash
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
