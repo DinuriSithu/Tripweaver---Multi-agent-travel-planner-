@@ -117,7 +117,7 @@ CUSTOM_CSS = """
 }
 
 #tw-header {
-    background: #167baa;
+    background: #29a8e3;
     color: white;
     padding: 24px 20px;
     border-radius: 16px;
