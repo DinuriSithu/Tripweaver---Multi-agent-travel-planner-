@@ -56,7 +56,7 @@ def stream_chat(message: str):
 
     except requests.exceptions.RequestException as exc:
         print(f"Backend connection error: {exc}")
-        yield "error", {"message": f"{FALLBACK_ERROR}\n\nDEBUG INFO: {exc}", "error": str(exc)}
+        yield "error", {"message": FALLBACK_ERROR, "error": str(exc)}
 
 def respond(message, history):
     if not message or not message.strip():
