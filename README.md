@@ -10,11 +10,11 @@ TripWeaver allows travellers to interact with a travel planning assistant using 
 
 For example, a user can ask:
 
-"Find hotels in Paris."
-"Show me flights from Colombo to Dubai."
-"Book hotel H123."
-"Book flight F456."
-"I need flights from CMB to LHR on 2026-08-01."
+-"Find hotels in Paris."
+-"Show me flights from Colombo to Dubai."
+-"Book hotel H123."
+-"Book flight F456."
+-"I need flights from CMB to LHR on 2026-08-01."
 
 The system interprets the user's intent and routes the request to the appropriate specialised agent.
 
