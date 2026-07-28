@@ -242,3 +242,11 @@ Starts all four services together on one Docker network.
    app keeps working.
 
 
+
+## Deployed Services
+
+- Frontend: https://tripweaver-frontend-j6jf.onrender.com
+- Backend: https://tripweaver-backend-mzgb.onrender.com
+- Hotel MCP server: https://tripweaver-hotel-mcp-bh43.onrender.com
+- Flight MCP server: https://tripweaver-flight-mcp-05mu.onrender.com
+
