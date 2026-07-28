@@ -151,7 +151,7 @@ added without touching agent code.
 ## 3. Deployment (Render, free tier)
 
 Render needs services to bind `0.0.0.0` and read the port from the
-`PORT` environment variable, so make sure these four spots look like
+`PORT` environment variable, so the four spots should look like
 this before deploying:
 
 **`main.py`** (at the bottom of file):
@@ -213,7 +213,7 @@ demo.launch(
      `BACKEND_URL=https://tripweaver-backend.onrender.com/chat`
 
 4. Deploy in this order: both MCP servers first, then backend, then
-   frontend — each step needs the URL from the one before it.
+   frontend each step needs the URL from the one before it.
 
 
 ### Docker Compose (alternative, local/self-hosted)
