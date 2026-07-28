@@ -2,13 +2,13 @@
 
 TripWeaver is a conversational multi-agent travel planning application that allows users to search for hotels, search for flights, and make hotel or flight booking requests through a single chat interface.
 
-The system uses a LangGraph-based multi-agent workflow, FastAPI backend, Gradio frontend, and Model Context Protocol (MCP) servers to connect the AI agents with external hotel and flight services.
+The system uses a LangGraph based multi-agent workflow, FastAPI backend, Gradio frontend, and Model Context Protocol (MCP) servers to connect the AI agents with external hotel and flight services.
 
 # Project Overview
 
 TripWeaver allows travellers to interact with a travel planning assistant using natural language.
 
-For example, a user can ask:
+For example a user can ask:
 
 - "Find hotels in Paris."
 - "Show me flights from Colombo to Dubai."
