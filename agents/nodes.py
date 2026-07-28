@@ -716,7 +716,7 @@ def generate_response(state: GraphState) -> dict:
         
         formatted_hotels = []
 
-        for index, hotel in enumerate(hotel_results[:7],start=1):
+        for index, hotel in enumerate(hotel_results[:10],start=1):
             formatted_hotels.append(
                 f"\n--- Hotel Option {index} ---\n"+ _format_hotel(hotel)
             )
@@ -733,7 +733,7 @@ def generate_response(state: GraphState) -> dict:
 
         formatted_flights = []
 
-        for index, flight in enumerate( flight_results[:7],start=1):
+        for index, flight in enumerate( flight_results[:10],start=1):
             formatted_flights.append(
                 f"\n--- Flight Option {index} ---\n"+ _format_flight(flight))
 
