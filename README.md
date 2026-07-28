@@ -1,8 +1,8 @@
 # TripWeaver — MCP-Based Multi-Agent Travel Planner
 
-TripWeaver is a conversational multi-agent travel planning application that allows users to search for hotels, search for flights, and make hotel or flight booking requests through a single chat interface.
+TripWeaver is a conversational multi-agent travel planning application that allows users to search for hotels, search for flights and make hotel or flight booking requests through a single chat interface.
 
-The system uses a LangGraph based multi-agent workflow, FastAPI backend, Gradio frontend, and Model Context Protocol (MCP) servers to connect the AI agents with external hotel and flight services.
+The system uses a LangGraph based multi-agent workflow, FastAPI backend, Gradio frontend and Model Context Protocol (MCP) servers to connect the AI agents with external hotel and flight services.
 
 # Project Overview
 
@@ -20,8 +20,8 @@ The system interprets the user's intent and routes the request to the appropriat
 
 **Supported Agents:**
 - General QA Agent =	Handles general travel questions and unclear requests
-- Hotel Agent	     =  Searches, lists, and books hotels
-- Flight Agent	 =  Searches, lists, and books flights
+- Hotel Agent	     =  Searches, lists and books hotels
+- Flight Agent	 =  Searches, lists and books flights
 
 The system uses MCP servers as the standardised communication layer between the AI agents and external travel services.
 
@@ -151,7 +151,7 @@ added without touching agent code.
 ## 3. Deployment (Render, free tier)
 
 Render needs services to bind `0.0.0.0` and read the port from the
-`PORT` environment variable, so the four spots should look like
+`PORT` environment variable so the four spots should look like
 this before deploying:
 
 **`main.py`** (at the bottom of file):
@@ -187,7 +187,7 @@ demo.launch(
 
 1. Push this repository to GitHub.
 2. On render (https://render.com), create **4 separate Web
-   Services** all from the same repository. change only the name and start
+   Services** all from the same repository. Change only the name and start
    command:
 
    | Name | Start Command |
