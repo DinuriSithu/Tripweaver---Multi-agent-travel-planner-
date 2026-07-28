@@ -185,9 +185,9 @@ demo.launch(
 
 **Steps:**
 
-1. Push this repo to GitHub.
-2. On [render.com](https://render.com), create **4 separate Web
-   Services**, all from the same repo, changing only the name and start
+1. Push this repository to GitHub.
+2. On render (https://render.com), create **4 separate Web
+   Services** all from the same repository. change only the name and start
    command:
 
    | Name | Start Command |
